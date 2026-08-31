@@ -6,7 +6,7 @@
 # ==========================================================
 
 # Configuration
-EMAIL_TO="rksgoal@gmail.com"
+EMAIL_TO="abc@gmail.com"
 SUBJECT="Azure Non-Prod Resource Scheduler Summary"
 LOG_FILE="/tmp/azure_shutdown_summary.log"
 
@@ -147,7 +147,7 @@ if [ "$TIME" -ge 2000 ] || [ "$TIME" -lt 0730 ]; then
     echo "Sending email summary to $EMAIL_TO..."
 
     if command -v mail &> /dev/null; then
-        mail -r "DevOps Team <singhriteshkumar251@gmail.com>" -s "$SUBJECT" "$EMAIL_TO" < "$LOG_FILE"
+        mail -r "DevOps Team <devopsteam@explicate-devops.com>" -s "$SUBJECT" "$EMAIL_TO" < "$LOG_FILE"
 
         if [ $? -eq 0 ]; then
             echo "Email sent successfully to $EMAIL_TO."
